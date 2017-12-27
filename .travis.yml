@@ -1,18 +1,14 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
-
 python:
-  - "3.6"
-  - "3.3"
-  - "2.7"
-  - "2.6"
-  - "pypy"
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+- '3.6'
+- '3.3'
+- '2.7'
+- '2.6'
+- pypy
 install:
-  - pip install -r requirements.txt
-
-# command to run tests, e.g. python setup.py test
+- pip install -r requirements.txt
 script:
-  - py.test
+- py.test
+notifications:
+  slack:
+    secure: gXLf0nO9BFiv+KbolgbWniTgRap/E0alOL3WZOEBMa8h1rErbKcBz8Ez0lOiVeCHKqTx0rkZgKEmgSqgZrsLK79upFj39JJgKJwgXchGiVMoku802rtjC9m2+EX52gG+jwaAoaUxDXec+Vkb0RFnHYmhJRyp1uCd7HCtx+gkZkb6ahpbf1HUZ4ucIhG+toLNkp7U0y/tTquX9lwjviuzUaBgMUkN0W5F65k8P0cLAISsQrKSoZ6S79v+uHfnZj90S1R2o54xPPZbo/iVPbcjFlubs8yH/n1bAEcPGmQHX9/61w25mti/LXeVtfuHHpse8B4BF7ZJaQOWAOT20Yq0+qY8SYuZjvLxehCYKeQe5cyAhuHCFc7DQ5ebcdAi98/cAeDrx/4bil8PonwRBbdzi9x6USHqE2zjvQGwQ61xafbWgIFa64E9l/0wMq+ZbONHq3PhQJsik5euSfch3frIwcOHvZv4+HqHjpbnnAisrN+bzDH2uXQhJX8nMIdQlg3oeaMASFhg+UaO25nZ3uRHsWdG0ZsHz0FRgKkKcZ3ldNoFzJNtPw53uxooUwIEIqO5nsiAVgk4hhDxodTtu2Fo1JPMbyueHl/ahwq0B2CgrqKkekT/xjIpgvGR/jjuiyLL8seLY3m0WR2ZeLTj5IC3zLRBDPBybhnn4ozQWXff+bA=
