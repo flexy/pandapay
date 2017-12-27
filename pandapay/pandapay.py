@@ -6,15 +6,15 @@ def _url(path):
 
 
 class Client(object):
-	def __init__(self, key):
+    def __init__(self, key):
         auth = (key)
-		self.customers = CustomerClient(auth)
-		self.donations = DonationClient(auth)
-		self.grants = GrantClient(auth)
+        self.customers = CustomerClient(auth)
+        self.donations = DonationClient(auth)
+        self.grants = GrantClient(auth)
 
 
 class DonationClient(object):
-	def __init__(self, auth):
+    def __init__(self, auth):
         self.auth = auth
 
     def create(self, **kwargs):
@@ -26,7 +26,7 @@ class DonationClient(object):
 
 
 class CustomerClient(object):
-	def __init__(self, auth):
+    def __init__(self, auth):
         self.auth = auth
 
     def create(self, **kwargs):
@@ -53,9 +53,9 @@ class CustomerClient(object):
 
 
 class GrantClient(object):
-	def __init__(self, auth):
+    def __init__(self, auth):
         self.auth = auth
-    
+
     def create(self, donation_id, **kwargs):
         if donation_id:
             url = _url('/donations/{:d}/grants'.format(donation_id))
