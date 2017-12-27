@@ -22,7 +22,7 @@ class DonationClient(object):
             _url('/donations'),
             data=kwargs,
             auth=self.auth
-        )
+        ).json
 
 
 class CustomerClient(object):
@@ -34,7 +34,7 @@ class CustomerClient(object):
             _url('/customers'),
             data=kwargs,
             auth=self.auth
-        )
+        ).json
 
     def update(self, customer_id, **kwargs):
         url = _url('/customers/{:d}'.format(customer_id))
@@ -42,14 +42,14 @@ class CustomerClient(object):
             url,
             data=kwargs,
             auth=self.auth
-        )
+        ).json
 
     def delete(self, customer_id):
         url = _url('/customers/{:d}'.format(customer_id))
         return requests.delete(
             url,
             auth=self.auth
-        )
+        ).json
 
 
 class GrantClient(object):
@@ -66,4 +66,4 @@ class GrantClient(object):
             url,
             data=kwargs,
             auth=self.auth
-        )
+        ).json
